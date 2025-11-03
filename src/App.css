@@ -1,38 +1,171 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  background-color: #e9ebee;
+  /* Um fundo neutro para destacar o chatbot */
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.chatbot-container {
+  width: 420px;
+  height: 650px;
+  background-color: #f4f6f8;
+  /* Cor de fundo da área de chat da sua imagem */
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.chatbot-header {
+  background-color: #1c2039;
+  /* Cor escura do header da sua imagem */
+  color: white;
+  padding: 20px;
+  text-align: left;
+}
+
+.chatbot-header h2 {
+  margin: 0 0 5px 0;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.chatbot-header span {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 20px 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  max-width: 85%;
+}
+
+.message-wrapper.user {
+  align-self: flex-end;
+}
+
+.message-wrapper.bot {
+  align-self: flex-start;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  background-color: #e4e6eb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1c2039;
+}
+
+.message-bubble {
+  padding: 12px 18px;
+  border-radius: 18px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.message.user .message-bubble {
+  background-color: #007BFF;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message.bot .message-bubble {
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #e9e9eb;
+  border-bottom-left-radius: 4px;
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+}
+
+.chatbot-input input {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  padding: 10px 0;
+  outline: none;
+  font-size: 1em;
+}
+
+.chatbot-input button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #667799;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+.chatbot-input button:hover {
+  color: #007BFF;
+}
+
+.chatbot-input button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Indicador de "digitando" */
+.typing-indicator {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.typing-indicator span {
+  height: 8px;
+  width: 8px;
+  background-color: #999;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 2px;
+  animation: bounce 1.4s infinite ease-in-out both;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.typing-indicator span:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-of-type(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
   }
-  to {
-    transform: rotate(360deg);
+
+  40% {
+    transform: scale(1.0);
   }
 }
