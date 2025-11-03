@@ -117,7 +117,3 @@ meu-chatbot/
 
 Pull requests são bem-vindos. Para mudanças importantes, por favor, abra uma _issue_ primeiro para discutir o que você gostaria de mudar.
 
-📄 Licença
-----------
-
-Este projeto está sob a licença [MIT](https://www.google.com/url?sa=E&q=LICENSE).
