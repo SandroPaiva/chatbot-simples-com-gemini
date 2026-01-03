@@ -36,7 +36,7 @@ function App() {
   const messagesEndRef = useRef(null);
 
   // Sua chave de API do Gemini
-  const GEMINI_API_KEY = "AIzaSyBljn7WmxQMwtzTy3lWVx1UIkq1J-WhBEU";
+  const GEMINI_API_KEY = "SUA_CHAVE_AQUI";
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
